@@ -1,0 +1,503 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Charles Sturt University | Textbook Site</title>
+
+<!-- Bootstrap -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript">
+
+var obj, dbParam, xmlhttp, myObj, x, txt = "";
+obj = {};
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt = "<option value=&quot;&quot;>Please select</option>"
+        for (x in myObj) {
+            txt += "<option value=&quot;" + myObj[x].termcode + "&quot;>" + myObj[x].termcode + " - " + myObj[x].description;
+        }
+        document.getElementById("termCode").innerHTML = txt;
+        document.getElementById("termCodeEmail").innerHTML = txt;
+    }
+};
+xmlhttp.open("GET", "termcodes", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+obj = {};
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt = "<option value=&quot;%&quot;>All Campus's (%)</option>"
+        for (x in myObj) {
+            txt += "<option value=&quot;" + myObj[x].campusCode + "&quot;>" + myObj[x].campusCode + " - " + myObj[x].campusDesc;
+        }
+        document.getElementById("campusCode").innerHTML = txt;
+        document.getElementById("campusCodeEmail").innerHTML = txt;
+    }
+};
+xmlhttp.open("GET", "campuses", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+obj = {};
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt = "<option value=&quot;%&quot;>% (All Study Modes)</option>"
+        for (x in myObj) {
+            txt += "<option value=&quot;" + myObj[x].id.debcodeCode + "&quot;>" + myObj[x].id.debcodeCode + " - " + myObj[x].debcodeDesc;
+        }
+        document.getElementById("studyMode").innerHTML = txt;
+        document.getElementById("studyModeEmail").innerHTML = txt;
+    }
+};
+xmlhttp.open("GET", "studyModes", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+obj = {};
+dbParam = JSON.stringify(obj);
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt = "<option value=&quot;%&quot;>% (All Schools)</option>"
+        for (x in myObj) {
+            txt += "<option value=&quot;" + myObj[x].schoolCode + "&quot;>" + myObj[x].schoolCode + " - " + myObj[x].schoolDesc;
+        }
+        document.getElementById("schoolCode").innerHTML = txt;
+        document.getElementById("schoolCodeEmail").innerHTML = txt;
+    }
+};
+xmlhttp.open("GET", "schools", true);
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+
+</script>
+
+</head>
+
+<body>
+<div id="entireContDiv">
+	<div class="row">
+		<div class="col-1">
+		</div>
+		<div class="col-7">
+			<h1>Administration Textbook Listings</h1>
+		</div>
+		<div class="col-3">
+			<img src="images/logoCSU.png" alt="Charles Sturt University" style="width: 100%;" />
+		</div>
+		<div class="col-1">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-1">
+		</div>
+
+		<div class="col-8 toolbar">
+			<p>DIVISION OF LEARNING AND TEACHING</p>
+		</div>
+		<div class="col-2 toolbar">
+			<p style="text-align: right;">FAQs &nbsp; &nbsp; <a href="help.html">Help</a>&nbsp; &nbsp; Logout</p>
+		</div>
+
+		<div class="col-1">
+		</div>
+
+
+	</div>
+
+	<div class="row">
+		<div class="col-1">
+		</div>
+
+		<div class="col-10 toolbar2">
+			<ul>
+				<li><a href="index.html">Administration Page</a></li>
+				<li><a href="index.html">Academic Page</a></li>
+				<li><a href="index.html">Student Page</a></li>
+			</ul>
+		</div>
+
+		<div class="col-1">
+		</div>
+
+
+	</div>
+
+	<div class="row" style="margin-top: 30px;">
+		<div class="col-1">
+		</div>
+
+		<div class="col-10 toolbar3">
+			<p class="smalltext"><span class="redtext">Home</span> / <span class="redtext">Item 1</span> / <span>Textbook List Details - Administration</span></p>
+		</div>
+
+		<div class="col-1">
+		</div>
+
+
+	</div>
+
+	<div class="row" >
+		<div class="col-1">
+		</div>
+
+		<div class="col-10">
+			<h2>Textbook List Details - Administration</h2>
+			<hr>
+			<div class="row" style="margin-bottom: 10px;">
+   				<ul class="nav nav-pills">
+    				<li class="active"><a data-toggle="pill" href="#home">Textbook List Details Search</a></li>
+					<li><a data-toggle="pill" href="#menu1">Send an Email to Subject Coordinators/Nominal Subject Outline Authors</a></li>
+  				</ul>
+			</div>
+			<div class="tab-content">
+    			<div id="home" class="tab-pane fade in active">
+      			<h3>Please enter details for the textbook list:</h3>
+      				
+      				<div class="row greyback">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-11 formrows">
+								<div class="row">
+									<div class="form-inline">
+										<div class="form-group col-12">
+											<div class="col-2">
+												<label for="termCode">Term Code:</label>
+											</div>
+											<div class="col-10">
+												<select class="form-control" id="termCode" name="termCode">
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+							<div class="col-1"></div>
+							<div class="col-11 formrows">
+								<div class="row">
+									<div class="form-inline">
+										<div class="form-group col-12">
+											<div class="col-2">
+												<label for="studyMode">Study Mode:</label>
+											</div>
+											<div class="col-10">
+												<select class="form-control" id="studyMode" name="studyMode">
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>	
+							</div>
+								
+						
+							<div class="col-1"></div>
+							<div class="col-11 ">
+								<div class="row">
+									<div class="form-inline">
+										<div class="form-group col-12">
+											<div class="col-2">
+												<label for="campusCampus">Subject Campus:</label>
+											</div>
+											<div class="col-10">
+												<select class="form-control" id="campusCode" name="campusCode">
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div class="col-1"></div>
+							<div class="col-11">
+								<div class="row">
+									<div class="form-inline">
+										<div class="form-group col-12">
+											<div class="col-2">
+												<label for="subjectCode">Subject Code:</label>
+											</div>
+											<div class="col-10">
+												<input type="text" id="subjectCode" name="subjectCode" value="%" />
+											</div>	
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-1"></div>
+							<div class="col-11">
+								<div class="row">
+									<div class="form-inline">
+										<div class="form-group col-12">
+											<div class="col-2">
+												<label for="schoolCode">School Code:</label>
+											</div>
+											<div class="col-10">
+												<select class="form-control" id="schoolCode" name="schoolCode">
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-5">
+							<input type="submit" value="Submit" class="btn btn-danger"/>
+						</div>
+					</div>
+				</div>
+				<!--
+  				<div class="row">
+    				<div class="col-6">
+    				</div>
+    				<div class="col-6">
+    					<a href="#" class="btn btn-danger" style="background-color: #E31B23; opacity: 0.8;">
+      						<span class="glyphicon glyphicon-print"></span> Print
+    					</a>
+    					<a href="#" class="btn btn-danger" style="background-color: #E31B23; opacity: 0.8;">
+							<span class="glyphicon glyphicon-save"></span> Save
+						</a>
+						<input type="text" value="Search" />
+						<a href="#" class="btn btn-danger" style="background-color: #E31B23; opacity: 0.8;">
+							<span class="glyphicon glyphicon-search"></span> Search
+						</a>
+    				</div>
+    			</div>
+    			-->
+   			<div class="row">
+
+					<div class="col-12">
+						<table class="table table-bordered table-striped">
+							<tr>
+								<th>Subject</th><th>Code</th><th>Author</th><th>Title</th><th>Publisher</th><th>Edition</th><th>Year</th><th>Status</th><th>Confirmed</th><th>Confirm</th><th>Unconfirm</th><th>Edit</th>
+							</tr>
+							<tr>
+								<td rowspan="2"><a href="" data-toggle="modal" data-target="#myModal">ACC100 AI</a></td><td>P</td><td>Calon S et al</td><td>Accounting: Building Business Skills. PURCHASE EITHER KIMMEL OR CARLON</td><td>Wiley</td><td>3 Aus</td><td>2009</td><td></td><td>N</td><td><label><input type="checkbox" value=""></label></td><td></td><td><span class="glyphicon glyphicon-edit"></span></td>
+							</tr>
+							<tr>
+								<td>P</td><td>Kimmel, P D et al</td><td>Accounting: Building Business Skills (2nd Edition). PURCHASE EITHER KIMMEL OR CARLON</td><td>Wiley</td><td>2 Aus</td><td>2006</td><td></td><td>N</td><td><label><input type="checkbox" value=""></label></td><td></td><td><span class="glyphicon glyphicon-edit"></span></td>
+							</tr>
+						</table>
+					</div>
+
+				</div>
+    			</div>
+
+    			<div id="menu1" class="tab-pane fade">
+     				<form action="emailtextbooks.html" method="post">
+      				<h3>Email Subject Coorinator/Nominal Subject Outline Authors</h3>
+      				<p>Or select the school below to send an email to the Subject Coorinators/Nominal Subject Outline Authors who have subjects without textbook information or without confirmed textbooks.</p>
+      				<div class="row greyback">
+						<div class="col-12">
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5">
+									<div class="form-inline">
+										<div class="form-group">
+											<label for="termCodeEmail">Term Code:</label>
+											<select class="form-control" id="termCodeEmail" name="termCodeEmail">
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5">
+									<div class="form-inline">
+										<div class="form-group">
+											<label for="campusCodeEmail">Subject Campus:</label>
+											<select class="form-control" id="campusCodeEmail" name="campusCodeEmail">
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5">
+									<div class="form-inline">
+										<div class="form-group">
+											<label for="studyModeEmail">Study Mode:</label>
+											<select class="form-control" id="studyModeEmail" name="studyModeEmail">
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5">
+									<div class="form-inline">
+										<div class="form-group">
+											<label for="schoolCodeEmail">School Codes:</label>
+											<select class="form-control" id="schoolCodeEmail" name="schoolCodeEmail">
+												<option>% (All Campus's)</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-5">
+								<input type="submit" value="Email Subject Coorinator/Nominal Subject Outline Authors" class="btn btn-danger" style="background-color: #E31B23; opacity: 0.8;" /></div>
+							</div>
+    				</div>
+				</div>
+				</form>
+			</div>
+			<div class="col-1">
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="row">
+		<div class="col-1">
+		</div>
+
+		<div class="col-8 toolbar">
+			<p>DIVISION OF LEARNING AND TEACHING</p>
+		</div>
+		<div class="col-2 toolbar">
+			<p style="text-align: right;">FAQs &nbsp; &nbsp; Help &nbsp; &nbsp; Logout</p>
+		</div>
+
+		<div class="col-1">
+		</div>
+
+
+	</div>
+
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#E31B23;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" style="color: #FFFFFF;">Textbook Listing Details - Modify Textbook Page</h4>
+      </div>
+      <div class="modal-body">
+       	<div class="row">
+       		<div class="col-1"></div>
+			<div class="col-10 toolbar3">
+				<p class="smalltext"><span class="redtext">Home</span> / <span class="redtext">Item 1</span> / Textbook List Details - Administration</p>
+			</div>
+			<div class="col-1"></div>
+		</div>
+        <p>
+	        <form class="form-inline">
+	        	<div class="form-group inputmargin">
+	        		<label for="textbook_type">Textbook Type</label>
+	        		<input type="text" class="form-control" id="textbook_type" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="author">Author</label>
+	        		<input type="text" class="form-control" id="author" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="title">Title:</label>
+	        		<input type="text" class="form-control" id="title" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="Publisher">Publisher:</label>
+	        		<input type="text" class="form-control" id="publisher" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="Edition">Edition:</label>
+	        		<input type="text" class="form-control" id="edition" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="year">Year:</label>
+	        		<input type="text" class="form-control" id="year" />
+	        	</div>
+	        	<div class="form-group">
+	        		<label for="confirmed">Confirmed:</label>
+	        		<input type="checkbox" class="form-control" id="confirmed" />
+	        	</div>
+	        </form>
+        </p>
+
+        <h5>Please enter any new textbook information</h5>
+         <p>
+        <form class="form-inline">
+        	<div class="form-group">
+        		<label for="textbook_type_new">Textbook Type</label>
+        		<input type="text" class="form-control" id="textbook_type_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="author_new">Author</label>
+        		<input type="text" class="form-control" id="author_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="title_new">Title:</label>
+        		<input type="text" class="form-control" id="title_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="Publisher_new">Publisher:</label>
+        		<input type="text" class="form-control" id="publisher_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="Edition_new">Edition:</label>
+        		<input type="text" class="form-control" id="edition_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="year_new">Year:</label>
+        		<input type="text" class="form-control" id="year_new" />
+        	</div>
+        	<div class="form-group">
+        		<label for="confirmed_new">Confirmed:</label>
+        		<input type="checkbox" class="form-control" id="confirmed_new" />
+        	</div>
+        </form>
+		</p>
+     	<p>Textbook notice to students (textbook information is displayed on the web for students to see)</p>
+     	<p>Please refer to your course details to determine if purchase of text is required.</p>
+     	<p><strong>Mandatory fields are market with an asterisk*</strong></p>
+      	<div class="form-inline">
+		<input type="submit" value="Submit" class="btn" /> <input type="reset" value="Reset" class="btn"/>
+	</div>
+      </div>
+      <div class="modal-footer">
+       	<button class="btn">Print</button>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: #E31B23; opacity: 0.8; color:#FFFFFF;">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
