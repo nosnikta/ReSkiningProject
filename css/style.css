@@ -156,3 +156,6 @@ a {
 	margin:0px;
 	padding:0px}
 
+.modal-dialog {
+	width: 50%;
+}
